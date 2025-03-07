@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+/* Custom animations for tech elements */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes matrix-code {
+  0% {
+    text-shadow: 0 0 5px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 5px #00ff00;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: float 3s ease-in-out 0.6s infinite;
+}
+
+.animate-float-delay-2 {
+  animation: float 3s ease-in-out 1.2s infinite;
+}
+
+.animate-float-delay-3 {
+  animation: float 3s ease-in-out 1.8s infinite;
+}
+
+.animate-float-delay-4 {
+  animation: float 3s ease-in-out 2.4s infinite;
+}
+
+.animate-matrix {
+  animation: matrix-code 2s infinite;
+}
+
+/* Custom scrollbar for a tech look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+/* Ensure smooth animations */
+* {
+  backface-visibility: hidden;
+}
+
+/* Base body styles */
+body {
+  background: black;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Framer Motion enhanced styles */
+.backdrop-blur-lg {
+  backdrop-filter: blur(12px);
+}
+
+/* Enhanced tech styling */
+button {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+/* Add tech scan line effect */
+.tech-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    rgba(0, 255, 255, 0.02) 50%,
+    rgba(0, 255, 255, 0.02)
+  );
+  background-size: 100% 4px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Add tech glitch effect for text */
+.glitch {
+  position: relative;
+  animation: glitch 5s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+      0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+/* Tech-inspired cursor styles */
+html {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%2306B6D4' stroke-width='1' stroke-dasharray='3 3'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%2306B6D4' fill-opacity='0.5'/%3E%3C/svg%3E%0A"),
+    auto;
+}
+
+button,
+a {
+  cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%23F472B6' stroke-width='1' stroke-dasharray='3 3'/%3E%3Ccircle cx='12' cy='12' r='3' fill='%23F472B6' fill-opacity='0.5'/%3E%3C/svg%3E%0A"),
+    pointer;
+}
